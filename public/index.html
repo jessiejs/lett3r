@@ -1,0 +1,62 @@
+<title>lett3r -- by andyman11</title>
+<div class="center">
+<span id="text">Loading...</span>
+<br>
+<br>
+<button onclick="getName();">Another one!</button>
+</div>
+<h1>Made by <b>@andyman11</b></h1>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+* {
+  font-family : Montserrat;
+  font-weight : 100;
+  background : #FC3A64;
+}
+span {
+  font-size : 50px;
+  text-transform : uppercase;
+  color : white;
+  width : 100%;
+}
+.center {
+  position : fixed;
+  left : 50%;
+  top : 50%;
+  transform : translate(-50%,-50%);
+  text-align : center;
+}
+button {
+  font-size : 15px;
+  padding : 12px 25px;
+  border-radius : 50px;
+  background : #FC3A64;
+  color : white;
+  border : 2px solid white;
+  font-weight : bold;
+  transition : 0.5s;
+  width : 250px;
+}
+button:hover {
+  background : white;
+  color : #FC3A64;
+  width : 270px;
+}
+h1 {
+  position : fixed;
+  bottom : 10px;
+  right : 20px;
+  font-size : 20px;
+  color : white;
+  font-weight : 300;
+}
+</style>
+
+<script>
+  getName();
+  function getName() {
+    fetch('https://lett3r.codelikecraze.repl.co/api/name')
+      .then(response => response.text())
+      .then(data => document.getElementById("text").innerHTML = data);
+  }
+</script>
